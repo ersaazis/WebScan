@@ -57,3 +57,8 @@ $router->group(['prefix'=>'news'], function() use($router) {
 		$router->post('/delete/{id}','NewsController@destroy');
 	});
 });
+
+$router->group(['prefix'=>'web'], function() use($router) {
+	$router->get('/result/{id}','WebScanController@result');
+	$router->post('/scan','WebScanController@scan');
+});
