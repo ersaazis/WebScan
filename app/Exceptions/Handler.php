@@ -45,11 +45,11 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $e)
     {
-        return parent::render($request, $e);
-        // return response()->json([
-        //     'success' => false,
-        //     'messages' => 'Method Not Allowed !',
-        //     'data' => '',
-        // ], 405);
+        // return parent::render($request, $e);
+        return response()->json([
+            'success' => false,
+            'messages' => 'Method Not Allowed !',
+            'data' => '',
+        ], 405);
     }
 }

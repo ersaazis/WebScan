@@ -21,8 +21,12 @@ class WebScanController extends Controller
     {
         //
     }
+
     private function keyGenerate(){
-        $alphabet=array('a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z');
+        $alphabet=array(
+            'a','b','c','d','e','f','g','h','i','j','k','l','m',
+            'n','o','p','q','r','s','t','u','v','w','x','y','z
+        ');
         $vocal=array('a','i','u','e','o');
         $key=$vocal[rand(0,count($vocal)-1)];
         $key.=$alphabet[rand(0,count($alphabet)-1)];
@@ -41,6 +45,7 @@ class WebScanController extends Controller
         }
         return $key;
     }
+
     public function scan(Request $request)
     {
         $validator = Validator::make($request->all(), [
